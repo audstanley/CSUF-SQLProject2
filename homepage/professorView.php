@@ -15,10 +15,7 @@
 		<div class="nav"
 
 		<br>
-		<?php include "php/students.php"; ?>
-		
-		<br>
-		<?php include "php/professors.php"; ?>
+		<?php include "php/professorForm.php"; ?>
 		
 	</body>
 </html>
