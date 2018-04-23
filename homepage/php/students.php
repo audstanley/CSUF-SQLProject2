@@ -18,13 +18,14 @@
                 $result = $mysqli->query("SELECT * FROM student LEFT JOIN department ON student.major = department.d_number");
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
+                        $number = preg_replace("/^1?(\d{3})(\d{3})(\d{4})$/", "$1-$2-$3", $row["s_phone"]);
                         echo "<tr>";
                         echo "<td>" . $row["fname"]   . "</td>";
                         echo "<td>" . $row["lname"]   . "</td>";
                         echo "<td>" . $row["street"]  . "</td>";
                         echo "<td>" . $row["city"]    . "</td>";
                         echo "<td>" . $row["zip"]     . "</td>";
-                        echo "<td>" . $row["s_phone"] . "</td>";
+                        echo "<td>" . $number         . "</td>";
                         echo "<td>" . $row["d_name"]  . "</td>";
                         echo "</tr>";
                     }
