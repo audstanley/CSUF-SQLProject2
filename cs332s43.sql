@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 22, 2018 at 11:30 PM
+-- Generation Time: Apr 24, 2018 at 08:57 PM
 -- Server version: 5.7.21-0ubuntu0.16.04.1
 -- PHP Version: 7.0.28-0ubuntu0.16.04.1
 
@@ -60,7 +60,9 @@ CREATE TABLE `department` (
 --
 
 INSERT INTO `department` (`d_number`, `d_name`, `d_phone`, `office_location`, `chairSsn`) VALUES
-(0, 'CPSC', 6579550000, 'Computer Science Building', 556760001);
+(0, 'CPSC', 6579550000, 'Computer Science Building', 556760001),
+(1, 'MATH', 6733849637, 'Mathematics Building ', 368863951),
+(2, 'PHYS', 6734983420, 'Physics Building', 563928593);
 
 -- --------------------------------------------------------
 
@@ -107,7 +109,9 @@ CREATE TABLE `professor` (
 --
 
 INSERT INTO `professor` (`p_ssn`, `p_name`, `address`, `p_phone`, `sex`, `title`, `salary`, `college_degrees`) VALUES
-(556760001, 'Wang', '8726 Iris Ave', 6572691070, 'M', 'Dr.', 100000, 'Computer Science,\r\nMathematics');
+(368863951, 'Laplante', '4056 Ashton Lane', 5125420443, 'F', 'Dr.', 105000, 'PhD Mathematics\r\nBachelors in Communications'),
+(556760001, 'Wang', '8726 Iris Ave', 6572691070, 'M', 'Dr.', 100000, 'PhD Computer Science,\r\nPhD Mathematics'),
+(563928593, 'Brown', '1870 Coburn Hollow Road', 3094389797, 'M', 'Dr.', 110000, 'PhD Physics');
 
 -- --------------------------------------------------------
 
@@ -131,8 +135,10 @@ CREATE TABLE `section` (
 --
 
 INSERT INTO `section` (`s_number`, `c_num`, `classroom`, `meeting_days`, `beginning_time`, `end_time`, `capacity`, `professor`) VALUES
-(1, 123, 'ECS202', 'M W F', '6:00am', '7:30am', 30, 556760001),
-(2, 335, 'ECS203', 'T Th', '10:30am', '12:00pm', 30, 556760001);
+(1, 335, 'ECS203', 'T Th', '10:30am', '12:00pm', 30, 556760001),
+(2, 335, 'ECS203', 'T Th', '3:30pm', '5:00pm', 30, 556760001),
+(3, 123, 'ECS202', 'M W F', '6:00am', '7:30am', 30, 556760001),
+(3, 335, 'ECS203', 'T Th', '7:00pm', '9:30pm', 30, 556760001);
 
 -- --------------------------------------------------------
 
@@ -158,6 +164,7 @@ CREATE TABLE `student` (
 
 INSERT INTO `student` (`studentId`, `fname`, `lname`, `street`, `city`, `state`, `zip`, `s_phone`, `major`) VALUES
 (1234, 'Richard', 'Stanley', '123 Stanley St', 'Lake Forest', 'CA', 92630, 9499030246, 0),
+(2693, 'Efren', 'McCoy', '2149 Pheasant Ridge Road', 'Fullerton', 'CA', 90621, 2154867481, 0),
 (5632, 'Pam', 'Beezly', '37103 Terry Lane', 'Fullerton', 'CA', 93870, 6058027820, 0),
 (7467, 'Bob', 'Roberts', '827 Newport Coast', 'Newport Beach', 'CA', 92625, 9492799738, 0),
 (9634, 'Jim', 'Halpert', '3964 Scranton st.', 'Irvine', 'CA', 92602, 9497028738, 0);
